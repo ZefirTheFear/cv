@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 
 import LanguageContext from "../../context/languageContext";
 
@@ -15,10 +15,6 @@ const Home: React.FC = () => {
         innerDivClassName: "home__icon-linkedin"
       }
     ];
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, []);
 
   return (

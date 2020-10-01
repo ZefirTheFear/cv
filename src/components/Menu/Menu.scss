@@ -28,8 +28,14 @@
   cursor: pointer;
   @include fastEaseOut;
 
-  &:hover {
+  &:active {
     transform: scale(1.2);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -64,10 +70,19 @@
     }
   }
 
-  &:hover {
+  &:active {
     .menu__btn-line {
       background: $secondary-color;
       transition: all 0.5s ease-out, background-color 0.2s ease-out;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .menu__btn-line {
+        background: $secondary-color;
+        transition: all 0.5s ease-out, background-color 0.2s ease-out;
+      }
     }
   }
 }
@@ -174,10 +189,17 @@
     font-weight: 300;
     @include fastEaseOut;
 
-    &:hover,
+    &:active,
     &.menu__nav-link_active {
       color: $secondary-color;
       letter-spacing: 1px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $secondary-color;
+        letter-spacing: 1px;
+      }
     }
   }
 

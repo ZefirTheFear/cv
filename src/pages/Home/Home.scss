@@ -54,9 +54,16 @@
   display: inline-block;
   color: #fff;
 
-  &:hover {
+  &:active {
     color: $secondary-color;
     @include easeOut;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $secondary-color;
+      @include easeOut;
+    }
   }
 
   &::before {

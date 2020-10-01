@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 
 import LanguageContext from "../../context/languageContext";
 
@@ -67,15 +67,11 @@ const Work: React.FC = () => {
         titleRu: "Сайт-резюме",
         img: cvImg,
         demo: "https://alexey-klimenko.web.app",
-        github: "https://github.com/ZefirTheFear/portfolio",
+        github: "https://github.com/ZefirTheFear/cv",
         descriptionRu: "Сайт-резюме. Написан на React.",
         descriptionEn: "СV-Site. Written using React."
       }
     ];
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, []);
 
   return (

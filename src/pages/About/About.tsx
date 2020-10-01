@@ -1,4 +1,6 @@
-import React, { useEffect, useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
+
+import portraitImg from "../../assets/img/portrait.jpg";
 
 import LanguageContext from "../../context/languageContext";
 
@@ -54,10 +56,6 @@ const About: React.FC = () => {
     ];
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="about">
       <h1 className="about__lg-heading">
@@ -70,7 +68,7 @@ const About: React.FC = () => {
         {languageContext.language === "ru" ? "и о моих навыках" : "and my skills"}
       </h2>
       <div className="about__info">
-        <img className="about__img" src={require("../../assets/img/portrait.jpg")} alt="portrait" />
+        <img className="about__img" src={portraitImg} alt="portrait" />
         <div className="about__bio">
           <h3 className="about__text-secondary">
             {languageContext.language === "ru" ? "Алексей Клименко" : "Alexey Klimenko"}

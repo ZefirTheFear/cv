@@ -63,11 +63,21 @@
   margin-bottom: 1.5rem;
   @include fastEaseOut;
 
-  &:hover {
+  &:active {
     background: $secondary-color;
     color: #000;
     span {
       color: #000;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: $secondary-color;
+      color: #000;
+      span {
+        color: #000;
+      }
     }
   }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Menu from "./components/Menu/Menu";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   return (
     <LanguageContext.Provider value={{ language: language, setLanguage: setLanguage }}>
       <BrowserRouter>
+        <ScrollToTop />
         <main className="app">
           <Menu />
           <div className="app__inner">

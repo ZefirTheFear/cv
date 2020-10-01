@@ -1,6 +1,8 @@
 import React, { useState, useContext, useCallback, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 
+import portraitImg from "../../assets/img/portrait.jpg";
+
 import LanguageContext from "../../context/languageContext";
 
 import "./Menu.scss";
@@ -75,11 +77,7 @@ const Menu: React.FC = () => {
       <nav className={"menu__nav" + (isMenuShown ? " menu__nav_show" : "")}>
         <div className={"menu__branding" + (isMenuShown ? " menu__branding_show" : "")}>
           <div className="menu__portrait">
-            <img
-              className="menu__portrait-img"
-              src={require("../../assets/img/portrait.jpg")}
-              alt="portrait"
-            />
+            <img className="menu__portrait-img" src={portraitImg} alt="portrait" />
           </div>
         </div>
         <ul className={"menu__list" + (isMenuShown ? " menu__list_show" : "")}>

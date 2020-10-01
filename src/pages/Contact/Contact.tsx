@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 
 import LanguageContext from "../../context/languageContext";
 
@@ -19,10 +19,6 @@ const Contact: React.FC = () => {
       }
     ];
   }, [languageContext.language]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="contact">
