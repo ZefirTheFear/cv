@@ -1,0 +1,193 @@
+@import "../../utils/css/_variables.scss";
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: $menu-height;
+  background: $primary-color;
+
+  @media (max-height: 480px) {
+    height: 20vh;
+  }
+}
+
+.menu__languages {
+  margin-left: 30px;
+}
+
+.menu__language-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid $secondary-color;
+  outline: 0;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  @include fastEaseOut;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.menu__language-btn_ru {
+  background-image: url(../../assets/img/svg_flags/russia.svg);
+}
+
+.menu__language-btn_en {
+  background-image: url(../../assets/img/svg_flags/united-kingdom.svg);
+}
+
+.menu__btn {
+  margin-left: auto;
+  margin-right: 28px;
+  z-index: 3;
+  cursor: pointer;
+  @include easeOut;
+
+  &.menu__btn_close {
+    transform: rotate(180deg);
+
+    .menu__btn-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  &:hover {
+    .menu__btn-line {
+      background: $secondary-color;
+      transition: all 0.5s ease-out, background-color 0.2s ease-out;
+    }
+  }
+}
+
+.menu__btn-line {
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  @include easeOut;
+}
+
+.menu__nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+  visibility: hidden;
+
+  &.menu__nav_show {
+    visibility: visible;
+  }
+
+  .menu__branding,
+  .menu__list {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .menu__branding {
+    background: $primary-color;
+    transform: translate(0, 100%);
+    @include easeOut;
+
+    &.menu__branding_show {
+      transform: translate(0, 0);
+    }
+
+    .menu__portrait {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid $secondary-color;
+
+      .menu__portrait-img {
+        width: 100%;
+      }
+
+      @media (max-width: 767px) {
+        width: 20vh;
+        height: 20vh;
+      }
+    }
+
+    @media (max-width: 767px) {
+      transform: translate(100%, 0);
+      height: 25vh;
+    }
+  }
+
+  .menu__list {
+    background: darken($primary-color, 5);
+    transform: translate(0, -100%);
+    @include easeOut;
+
+    &.menu__list_show {
+      transform: translate(0, 0);
+    }
+
+    @media (max-width: 767px) {
+      transform: translate(-100%, 0);
+      height: 75vh;
+    }
+  }
+
+  .menu__nav-item {
+    transform: translate(600px, 0);
+    margin-bottom: 1rem;
+    @include easeOut;
+
+    &.menu__nav-item_show {
+      transform: translate(0, 0);
+    }
+  }
+
+  .menu__nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    @include fastEaseOut;
+
+    &:hover,
+    &.menu__nav-link_active {
+      color: $secondary-color;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+@for $x from 1 through 4 {
+  .menu__nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}

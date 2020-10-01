@@ -1,0 +1,117 @@
+@import "../../utils/css/_variables.scss";
+
+.work {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
+}
+
+.work__lg-heading {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 767px) {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  @media (max-height: 480px) {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+}
+
+.work__text-secondary {
+  color: $secondary-color;
+}
+
+.work__sm-heading {
+  padding: 0.5rem 1rem;
+  background: rgba(lighten($primary-color, 2), 0.5);
+  font-size: 1.5rem;
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.work__projects {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+
+  @media (max-height: 480px) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work__project-title {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: $secondary-color;
+}
+
+.work__project-img {
+  box-sizing: border-box;
+  width: 100%;
+  border: 3px solid #fff;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    opacity: 0.5;
+    border-color: $secondary-color;
+    @include easeOut;
+  }
+}
+
+.work__project-link,
+.work__project-github-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  background: #000;
+
+  &:hover {
+    background: $secondary-color;
+    color: #000;
+  }
+}
+
+.work__project-link {
+  &::before {
+    content: "\f06e";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 5px;
+  }
+}
+
+.work__project-github-link {
+  &::before {
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+    margin-right: 5px;
+  }
+}
+
+.work__project-description {
+  pre {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    white-space: pre-wrap;
+  }
+}

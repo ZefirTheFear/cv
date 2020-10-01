@@ -1,0 +1,78 @@
+@import "../../utils/css/_variables.scss";
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
+}
+
+.home__lg-heading {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 767px) {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  @media (max-height: 480px) {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+}
+
+.home__text-secondary {
+  color: $secondary-color;
+}
+
+.home__sm-heading {
+  padding: 0.5rem 1rem;
+  background: rgba(lighten($primary-color, 2), 0.5);
+  font-size: 1.5rem;
+}
+
+.home__icons {
+  margin-top: 2rem;
+
+  @media (max-height: 480px) {
+    margin-top: 1rem;
+  }
+}
+
+.home__icon-link {
+  padding: 0.4rem;
+}
+
+.home__icon-gitnub,
+.home__icon-linkedin {
+  display: inline-block;
+  color: #fff;
+
+  &:hover {
+    color: $secondary-color;
+    @include easeOut;
+  }
+
+  &::before {
+    font-family: "Font Awesome 5 Brands";
+    font-size: 2rem;
+  }
+}
+
+.home__icon-gitnub {
+  &::before {
+    content: "\f09b";
+  }
+}
+
+.home__icon-linkedin {
+  &::before {
+    content: "\f08c";
+  }
+}
